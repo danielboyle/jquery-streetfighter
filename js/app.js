@@ -23,8 +23,22 @@ $(document).ready(function() {
 	.mouseup(function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
-		//Ryu goes back to ready position
 	});
+});
+
+$(document).keydown(function(e) {
+	if (e.keyCode === 88) {
+		$('.ryu-still').hide();
+		$('.ryu-ready').hide();
+		$('.ryu-cool').show();
+	};
+});
+
+$(document).keyup(function(e) {
+	if (e.keyCode === 88) {
+		$('.ryu-cool').hide();
+		$('.ryu-still').show();
+	}
 });
 
 function playHadouken() {
