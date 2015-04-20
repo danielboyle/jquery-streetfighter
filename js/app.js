@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	gameIntro();
 	$('.ryu').mouseenter(function() {
 		$('.ryu-still').hide();
 		$('.ryu-ready').show();
@@ -45,4 +46,17 @@ function playHadouken() {
 	$('#hadouken-sound')[0].volume = 0.5;
 	$('#hadouken-sound')[0].load();
 	$('#hadouken-sound')[0].play(); 
+}
+
+function gameIntro() {
+	$('.intro-text').fadeIn(3000, function() {
+		$(this).fadeOut(3000, function() {
+			$('.instruction1-text').fadeIn(3000, function() {
+				$('.instruction2-text').fadeIn(3000, function() {
+					$('.instruction1-text').fadeOut(3000);
+					$('.instruction2-text').fadeOut(3000);
+				});
+			})
+		})
+	})
 }
